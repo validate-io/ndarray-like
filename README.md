@@ -2,7 +2,7 @@ ndarray-like
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Validates if a value is ndarray-like.
+> Validates if a value is [ndarray](https://github.com/compute-io/ndarray)-like.
 
 
 ## Installation
@@ -17,18 +17,57 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-ndarray-like' );
+var ndarrayLike = require( 'validate.io-ndarray-like' );
 ```
 
-#### foo( value )
+#### ndarrayLike( value )
 
-What does this function do?
+Validates if a value is [ndarray](https://github.com/compute-io/ndarray)-like.
+
+``` javascript
+var arr = {
+	'data': [1,2,3,4],
+	'shape': [2,2],
+	'strides': [2,1],
+	'offset': 0,
+	'dtype': 'generic',
+	'length': 4
+};
+
+console.log( ndarrayLike( arr ) );
+// returns true
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-ndarray-like' );
+var ndarrayLike = require( 'validate.io-ndarray-like' ),
+	ndarray = require( 'compute-ndarray' );
+
+var arr = new ndarray( new Float32Array( 10 ) );
+console.log( ndarrayLike( arr ) );
+// returns true
+
+arr = {
+	'data': [1,2,3,4],
+	'shape': [2,2],
+	'strides': [2,1],
+	'offset': 0,
+	'dtype': 'generic',
+	'length': 4
+};
+console.log( ndarrayLike( arr ) );
+// returns true
+
+console.log( ndarrayLike( [] ) );
+// returns false
+
+console.log( ndarrayLike( {} ) );
+// returns false
+
+console.log( ndarrayLike( null ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,

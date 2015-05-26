@@ -26,12 +26,23 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "valid",
+    "ndarray",
+    "ndarray like",
+    "is",
+    "isndarray",
+ 		"compute.io",
+ 		"compute"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/ndarray-like/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-array": "^1.0.5",
+    "validate.io-integer-primitive": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
