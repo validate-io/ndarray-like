@@ -68,15 +68,15 @@ describe( 'validate.io-ndarray-like', function tests() {
 		values.push( arr );
 
 		arr = create();
-		arr.shape = null;
+		arr.shape = true;
 		values.push( arr );
 
 		arr = create();
-		arr.strides = 'strides';
+		arr.strides = 0;
 		values.push( arr );
 
 		arr = create();
-		arr.offset = Math.PI;
+		arr.offset = undefined;
 		values.push( arr );
 
 		arr = create();
@@ -84,11 +84,11 @@ describe( 'validate.io-ndarray-like', function tests() {
 		values.push( arr );
 
 		arr = create();
-		arr.length = NaN;
+		arr.length = new Number( NaN );
 		values.push( arr );
 
 		arr = create();
-		arr.length = -1;
+		arr.length = null;
 		values.push( arr );
 
 		for ( var i = 0; i < values.length; i++ ) {

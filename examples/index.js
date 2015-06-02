@@ -1,13 +1,8 @@
 'use strict';
 
-var ndarray = require( 'compute-ndarray' ),
-	ndarrayLike = require( './../lib' );
+var ndarrayLike = require( './../lib' );
 
-var arr = new ndarray( new Float32Array( 10 ) );
-console.log( ndarrayLike( arr ) );
-// returns true
-
-arr = {
+var arr = {
 	'data': [1,2,3,4],
 	'shape': [2,2],
 	'strides': [2,1],

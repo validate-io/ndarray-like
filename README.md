@@ -42,14 +42,9 @@ console.log( ndarrayLike( arr ) );
 ## Examples
 
 ``` javascript
-var ndarrayLike = require( 'validate.io-ndarray-like' ),
-	ndarray = require( 'compute-ndarray' );
+var ndarrayLike = require( 'validate.io-ndarray-like' );
 
-var arr = new ndarray( new Float32Array( 10 ) );
-console.log( ndarrayLike( arr ) );
-// returns true
-
-arr = {
+var arr = {
 	'data': [1,2,3,4],
 	'shape': [2,2],
 	'strides': [2,1],
