@@ -28,7 +28,7 @@ function create() {
 	var ndarray = {};
 	ndarray.data = [1,2,3,4];
 	ndarray.shape = [2,2];
-	ndarray.strides = [2,1];
+	ndarray.stride = [2,1];
 	ndarray.offset = 0;
 	ndarray.dtype = 'generic';
 	ndarray.length = 4;
